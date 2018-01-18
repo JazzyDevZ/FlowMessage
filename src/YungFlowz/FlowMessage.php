@@ -26,6 +26,6 @@ class Main extends PluginBase implements Listener{
  //This sends a message to that player directly when they connect
   public function onPlayerJoin(PlayerJoinEvent $event){
      $p = $event->getPlayer();
-     $p->sendMessage(TF::GRAY."Welcome, you are using FlowMessage\n");
+     $p->sendMessage(TF::GRAY."Welcome, you are using FlowMessage!"."\n". TF::RED."Created by YungFlowz and DevrlyCode!");
   }
 }
