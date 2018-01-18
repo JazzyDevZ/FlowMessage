@@ -2,23 +2,33 @@
 
 namespace FlowMessage;
 
-use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\PluginBase as Base;
+use poocketmine\Server;
+use pocketmine\Player;
+use pocketmine\event\Event;
+use pocketmine\utils\TextFormat;
+use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\utils\TextFormat as TF;
 
-class Main extends PluginBase implements Listener{
+class Main extends Base implements Listener{
 	
-	public function onEnable(){
-		$this->getserver()->getLogger()->info("FlowMessage Plugin Activated")
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-	}
+	    public $cfg;
+	    public function onLoad(){
+	         $this->getLogger()->info("FlowMessage Plugin Activating...");
+	    }
 	
-	public function onDisable(){
-		$this->getserver()->getLogger()->info("FlowMessage Plugin Deactivated")
-	}
+	    public function onEnable(){
+	         $this->saveDefaultConfig();
+	         $this->reloadConfig();
+	         $this->getLogger()->info("FlowMessage Plugin Activated");
+	         $this->getServer()->getPluginManager()->registerEvents($this,$this);
+	  }
 	
-	public function onJoin(PlayerJoinEvent $event){
-		$player = $event->getPLayer();
-		$player->sendMessage(TF::RED . ">" . TF::GRAY . "Welcome, you are using FlowMessage \n Made by DevrlyCode and YungFlowz!";
-		{
+	  public function onJoin(PlayerJoinEvent $event){
+	        $player = $event->getPlayer();
+	        $msg = $this->getConfig()->get("message");
+	        $msg = str_replace("{player}", $player->getName(), $msg);
+	        $player->sendMessage($msg);   
+		}
+  }
