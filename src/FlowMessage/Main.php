@@ -1,6 +1,6 @@
 <?php
 
-namespace FlowMessage;
+namespace FlowMessage\Main;
 
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\Listener;
