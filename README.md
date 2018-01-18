@@ -3,9 +3,9 @@
 
 ## Authors:
 
-*- YungFlowz*
+*- [YungFlowz](https://twitter.com/yungflowz_)*
 
-*- DevrlyCode*
+*- [DevrlyCode](https://twitter.com/DevrlyCode)*
 
 ## Supported API's:
 
