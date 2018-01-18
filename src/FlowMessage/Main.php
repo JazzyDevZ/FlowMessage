@@ -1,5 +1,7 @@
 <?php
 
+//Property of DevrlyCode & YungFlowz, you do not have permission to copy this plugin.
+
 namespace FlowMessage;
  
 use pocketmine\event\Listener;
