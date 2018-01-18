@@ -5,7 +5,7 @@ namespace FlowMessage;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 
 class Main extends PluginBase implements Listener{
@@ -21,6 +21,6 @@ class Main extends PluginBase implements Listener{
  //This sends a message to that player directly when they connect
   public function onPlayerJoin(PlayerJoinEvent $event){
      $p = $event->getPlayer();
-     $p->sendMessage(TF::GRAY."Welcome, you are using FlowMessage!"."\n". TF::RED."Created by YungFlowz and DevrlyCode!");
+     $p->sendMessage(TextFormat::GRAY."Welcome, you are using FlowMessage!"."\n". TextFormat::RED."Created by YungFlowz and DevrlyCode!");
   }
 }
